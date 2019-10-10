@@ -1,29 +1,37 @@
-let labelType;
+// Declarations
+
+let passwordText
 let passwordToggle;
 
-// Show items
+// Change Markup
 
 const changeType = function() {
-  if (labelType.type == 'password') {
-    labelType.type = 'text';
-  } else {
-    labelType.type = 'password';
+  if(passwordToggle.checked == true){
+    passwordText.type = "password";
   }
-};
+  else {
+    passwordText.type = "text";
+  }
+}
 
 // Eventlisteners
 
 const listenToCheckbox = function() {
   passwordToggle.addEventListener('input', function() {
-    labelType = document.querySelector('.js-password');
+    passwordToggle = document.querySelector('.js-password-toggle');
     changeType();
   });
 };
 
+// Start function
+
 const init = function() {
-  passwordToggle = document.querySelector('.js-password-label');
+  passwordText = document.querySelector('.js-password-text');
+  passwordToggle = document.querySelector('.js-password-toggle');
   listenToCheckbox();
 };
+
+// Execute when the page is fully loaded
 
 document.addEventListener('DOMContentLoaded', function() {
   console.info('DOM geladen');
