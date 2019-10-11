@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/screen.css" />
 
-    <script src="scripts/index.js"></script>
+    <script src="scripts/app.js"></script>
   </head>
   <body>
     <section class="o-row o-row--lg o-row--login">
@@ -41,19 +41,22 @@
             <h2 class="c-card__title">
               Sign in to your account
             </h2>
-            <p class="c-form-field">
-              <label class="c-label" for="username">
-                Email address
-              </label>
-              <input class="c-input" type="email" name="username" id="username" placeholder="e.g. john@doe.com" required />
+            <p class="c-form-field has-error">
+              <span class="c-label--error">
+                <label class="c-label" for="username">
+                  Email address
+                </label>
+                <label class="c-label"></label>
+              </span>
+              <input class="c-input .js-email" type="email" name="username" id="username" placeholder="e.g. john@doe.com" required />
             </p>
-            <p class="c-form-field">
+            <p class="c-form-field has-error">
               <label class="c-label" for="password">
                 Password
               </label>
 
               <span class="c-password-toggle-container">
-                <input class="c-input js-password-text" type="password" name="password" id="password" required />
+                <input class="c-input js-password" type="password" name="password" id="password" required />
                 <!-- Password Toggle -->
                 <span class="c-password-toggle">
                   <input class="o-hide-accessible c-input-password-toggle js-password-toggle" type="checkbox" id="passwordToggle" />
@@ -82,7 +85,7 @@
             </p>
             <p class="u-mb-md">
               <!-- Button -->
-              <button class="o-button-reset c-button js-sign-in-button">Sign in</button>
+              <button class="o-button-reset c-button js-sign-in-button" onclick="return validate()">Sign in</button>
             </p>
             <p class="u-text-sm u-align-text-center">
               <a href="#!">
